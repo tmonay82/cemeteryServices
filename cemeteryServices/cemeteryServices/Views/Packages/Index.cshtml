@@ -1,0 +1,25 @@
+﻿@model IEnumerable<cemeteryServices.Models.Product>
+
+@{
+    ViewData["Title"] = "Our Packages";
+}
+
+<h1>Our Packages</h1>
+
+<div class="container">
+    <div class="row">
+        @foreach (var package in Model)
+        {
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="@package.ImageUrl" class="card-img-top" alt="@package.Name" />
+                    <div class="card-body">
+                        <h5 class="card-title">@package.Name</h5>
+                        <p class="card-text">@package.Description</p>
+                        <p class="card-text"><strong>Price:</strong> @package.Price.ToString("C")</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
