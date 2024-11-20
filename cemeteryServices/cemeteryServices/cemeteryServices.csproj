@@ -6,7 +6,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>4ff2990e-1a53-4b00-be55-2d3ed116f1cd</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <RuntimeIdentifiers>win-x86;win-x64</RuntimeIdentifiers>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="cemeteryServices.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="cemeteryServices.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="bootstrap" Version="5.3.0" />
