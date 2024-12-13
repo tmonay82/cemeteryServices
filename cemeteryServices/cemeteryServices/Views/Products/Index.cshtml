@@ -4,54 +4,34 @@
     ViewData["Title"] = "Products";
 }
 
-<h1>Products</h1>
+<h1 class="text-center my-5">Products</h1>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
-</p>
+<div class="container">
+    <div class="text-end mb-4">
+        <a asp-action="Create" class="btn btn-success">Create New</a>
+    </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+    <div class="row g-4">
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ImageUrl)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-secondary">Edit</a>
-                    <form asp-action="Delete" method="post" style="display:inline;">
-                        <input type="hidden" name="Id" value="@item.Id" />
-                        <input type="submit" value="Delete" class="btn btn-danger" />
-                    </form>
-                </td>
-            </tr>
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <img src="@item.ImageUrl" class="card-img-top" alt="@item.Name" />
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold">@item.Name</h5>
+                        <p class="card-text">@item.Description</p>
+                        <p class="card-text"><strong>Price:</strong> @item.Price.ToString("C")</p>
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-secondary btn-sm">Edit</a>
+                            <form asp-action="Delete" method="post" style="display:inline;">
+                                <input type="hidden" name="Id" value="@item.Id" />
+                                <input type="submit" value="Delete" class="btn btn-danger btn-sm" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
-    </tbody>
-</table>
+    </div>
+</div>
+

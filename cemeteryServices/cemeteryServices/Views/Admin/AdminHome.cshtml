@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Admin Home";
+}
+
+<h1 class="text-center my-5">Admin Home</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Manage Users</h5>
+                    <p class="card-text">Add, edit, or remove users.</p>
+                    <a href="@Url.Action("Index", "Users")" class="btn btn-primary">Go to Manage Users</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">Manage Packages</h5>
+                    <p class="card-text">Add, edit, or remove packages.</p>
+                    <a href="@Url.Action("Index", "Products")" class="btn btn-primary">Go to Manage Packages</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title fw-bold">View Orders</h5>
+                    <p class="card-text">View and manage customer orders.</p>
+                    <a href="@Url.Action("Index", "Orders")" class="btn btn-primary">Go to View Orders</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

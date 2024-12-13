@@ -4,17 +4,17 @@
     ViewData["Title"] = "Our Packages";
 }
 
-<h1>Our Packages</h1>
+<h1 class="text-center my-5">Our Packages</h1>
 
 <div class="container">
     <div class="row">
         @foreach (var package in Model)
         {
             <div class="col-md-4">
-                <div class="card mb-4">
+                <div class="card mb-4 shadow-sm h-100">
                     <img src="@package.ImageUrl" class="card-img-top" alt="@package.Name" />
                     <div class="card-body">
-                        <h5 class="card-title">@package.Name</h5>
+                        <h5 class="card-title fw-bold">@package.Name</h5>
                         <p class="card-text">@package.Description</p>
                         <p class="card-text"><strong>Price:</strong> @package.Price.ToString("C")</p>
                     </div>
